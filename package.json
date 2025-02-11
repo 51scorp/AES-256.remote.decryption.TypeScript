@@ -12,11 +12,13 @@
     "url": "https://github.com/51scorp/AES-256.remote.decryption.TypeScript.git"
   },
   "dependencies": {
-    "ssh2": "^1.11.0",
-    "crypto": "^1.0.1",
+    "@types/ssh2": "^1.15.1",
     "fs": "^0.0.1-security"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "typescript": "^5.6.3",
+    "@types/ssh2": "^1.15.1"
+  },
   "keywords": [
     "ssh",
     "sftp",
