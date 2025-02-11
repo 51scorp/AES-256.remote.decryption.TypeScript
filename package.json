@@ -1,0 +1,30 @@
+{
+  "name": "aes-256.remote.decryption.typescript",
+  "version": "1.0.0",
+  "description": "A module to fetch and decrypt files over SSH using SFTP.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"No test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/51scorp/AES-256.remote.decryption.TypeScript.git"
+  },
+  "dependencies": {
+    "ssh2": "^1.11.0",
+    "crypto": "^1.0.1",
+    "fs": "^0.0.1-security"
+  },
+  "devDependencies": {},
+  "keywords": [
+    "ssh",
+    "sftp",
+    "decryption",
+    "file-transfer"
+  ],
+  "author": "Yuriy Krenta",
+  "license": "MIT"
+}
+
+
