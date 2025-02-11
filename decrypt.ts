@@ -81,7 +81,7 @@ export async function fetchAndDecryptFile(
   decryptionConfig: DecryptionConfig
 ): Promise<string | null> {
   const decryptionInfo: any = {
-    filePath: decryptionConfig.filePath ?? defaultPathEncryptedFile,
+    filePath: decryptionConfig.filePath ?? `defaultPathEncryptedFile`,
     decryptionKey: decryptionConfig.decryptionKey ?? `${process.env.KEY_ETCD}`,
   };
 
@@ -95,16 +95,18 @@ export async function fetchAndDecryptFile(
         username: sshConfig.username ?? `${process.env.YOUR__ENV_USERNAME}`,
         tryKeyboard: true,
         password: sshConfig.password ?? `${process.env.YOUR__ENV_PASSWORD}`,
-        privateKey: sshConfig.privateKeyPath ? fs.readFileSync(sshConfig.privateKeyPath, 'utf8') : undefined,
+        // privateKey: sshConfig.privateKeyPath ? fs.readFileSync(sshConfig.privateKeyPath, 'utf8') : undefined,
+        // TODO no testing
       };
 
-      if (sshConfig.privateKeyPath) {
-        try {
-          connectionConfig.privateKey = fs.readFileSync(sshConfig.privateKeyPath, 'utf8');
-        } catch (err) {
-          return reject(`Error reading private key: ${err.message}`);
-        }
-      }
+      //TODO no testing
+      // if (sshConfig.privateKeyPath) {
+      //   try {
+      //     connectionConfig.privateKey = fs.readFileSync(sshConfig.privateKeyPath, 'utf8');
+      //   } catch (err) {
+      //     return reject(`Error reading private key: ${err.message}`);
+      //   }
+      // }
       client
         .on('ready', () => {
           client.sftp((err, sftp) => {
